@@ -17,3 +17,6 @@ Route::get('/', 'TeamsController@index');
 Route::get('/{id}', 'TeamsController@show');
 
 Route::get('/players/{id}', 'PlayersController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
