@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/teams', 'TeamsController@index');
-Route::post('/teams/{id}/comments', 'CommentsController@store');
-Route::get('/teams/{id}', 'TeamsController@show');
+Route::post('/teams/{team}/comments', 'CommentsController@store')->middleware('forbiddenwords');
+Route::get('/teams/{team}', 'TeamsController@show');
 
 Route::get('/players/{id}', 'PlayersController@show');
 
