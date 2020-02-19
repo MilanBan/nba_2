@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/teams', 'TeamsController@index');
+Route::post('/teams/{id}/comments', 'CommentsController@store');
 Route::get('/teams/{id}', 'TeamsController@show');
 
 Route::get('/players/{id}', 'PlayersController@show');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

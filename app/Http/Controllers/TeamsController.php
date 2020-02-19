@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\Player;
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -19,7 +20,7 @@ class TeamsController extends Controller
     }
 
     public function show($id){
-        $team = Team::with('players')->findOrFail($id);
+        $team = Team::with('players', 'comments.user')->findOrFail($id);
 
         return view('/teams.show', compact('team'));
     }
