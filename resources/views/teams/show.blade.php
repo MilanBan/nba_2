@@ -26,12 +26,12 @@
                 <div><H2>Ostavi Komentar</H2></div>
                 <form method="POST" action="/teams/{{$team->id}}/comments">
                 @csrf
+                 
                 <div class="form-group">
-                <label for="content">Content</label>
-                <textarea type="text" id="content" name="content" class="form-control"></textarea>
+                 <input type="text" class="form-control" id="content"  placeholder="content" name="content">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Add comment</button>
                 </div>
                 </form>
                 </div>

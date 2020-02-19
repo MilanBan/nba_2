@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
-    protected $fillable = ['id'];
+    protected $guarded = ['id'];
 
     public function team(){
         return $this->belongsTo(Team::class);
