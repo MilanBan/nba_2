@@ -9,6 +9,11 @@ use App\Http\Requests\CommentRequest;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(CommentRequest $request,Team $team){
         // $id = auth()->user()->id;
         // $comment = Comment::create(array_merge($request->all(), ['user_id' => $id]));
