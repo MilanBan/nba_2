@@ -6,6 +6,8 @@ use App\Team;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
+use App\Mail\CommentRecived;
+use Illuminate\Support\Facades\Mail;
 
 class CommentsController extends Controller
 {
@@ -21,7 +23,9 @@ class CommentsController extends Controller
         $team->comments()->create(array_merge($request->all(), 
         ['user_id' => auth()->user()->id]));
         // $team->comments()->create(['user_id' => auth()->user()->id, 'content' => $request->content]);
-                
+           
+        Mail::to($team)->send(new CommentRecived($team));
+
         return redirect('/teams/'.$team->id);
     }
 
