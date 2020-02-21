@@ -36,6 +36,7 @@
                     <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
                         <a class="nav-links" href="/teams">Teams</a>
+                        <a class="nav-links" href="/news">News</a>
                      </li>
                     </ul>
 
