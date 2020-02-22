@@ -8,6 +8,13 @@
                 <div class="card-header">NEWS</div>
                     <h3><b>{{$new->user->name}}:</b> {{$new->title}}</h3>
                     <p>{{$new->content}}</p><hr>
+                    <p>Teams in this new: 
+                    @if (is_array($new) || is_object($new))
+                    @foreach($new->teams as $team)
+                    <a href="/news/team/{{ $team->name }}">{{ $team->name}}</a>
+                    @endforeach
+                    @endif
+                    </p>
             </div>
         </div>
     </div>

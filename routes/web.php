@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/news', 'NewsController@index');
 Route::get('/news/{new}', 'NewsController@show');
+Route::get('/news/{new}/{teamName}', 'NewsController@selectedByTeam');
 
 
 Route::get('/', function(){
