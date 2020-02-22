@@ -33,7 +33,7 @@ class NewsController extends Controller
         
         $news = $team->news()->with('user', 'teams')->paginate(4);
 
-        return view('news.newsByTeam', compact('team', 'news'));
+        return view('news.newsbyTeam', compact('team', 'news'));
     }
 
 }
